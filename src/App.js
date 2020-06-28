@@ -34,9 +34,8 @@ function App() {
     ]
   }
   const handleChange = (event, newDataType) => {
-    if(newDataType==dataType){
-    }
-    else{
+    if(dataType && newDataType){
+      console.log(dataType,newDataType)
       setDataType(newDataType)
     }
   }
