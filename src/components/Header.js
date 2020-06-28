@@ -46,16 +46,16 @@ const StyledNavLink = styled(NavLink)`
 `
 
 
-const Header = ({homeChange,mealChange,categoryChange,cuisineChange,centerChange,handleChange,dataType}) => (
+const Header = ({handleChange,dataType}) => (
     <Nav>
     <FlexGroup center>
       <Logo>ARS</Logo>
       <FlexGroup center>
         <StyledNavLink exact activeClassName="active" to="/">Home</StyledNavLink>
-        <StyledNavLink exact activeClassName="active" onClick={mealChange} to="/meal">Meal</StyledNavLink>
-        <StyledNavLink exact activeClassName="active" onClick={categoryChange} to="/category">Category</StyledNavLink>
-        <StyledNavLink exact activeClassName="active" onClick={cuisineChange} to="/cuisine">Cuisine</StyledNavLink>
-        <StyledNavLink exact activeClassName="active" onClick={centerChange} to="/center">Center</StyledNavLink>
+        <StyledNavLink exact activeClassName="active" to="/meal">Meal</StyledNavLink>
+        <StyledNavLink exact activeClassName="active" to="/category">Category</StyledNavLink>
+        <StyledNavLink exact activeClassName="active" to="/cuisine">Cuisine</StyledNavLink>
+        <StyledNavLink exact activeClassName="active" to="/center">Center</StyledNavLink>
       </FlexGroup>
     </FlexGroup>
     <FlexGroup right>

@@ -33,21 +33,6 @@ function App() {
       }
     ]
   }
-  const homeChange = (event) => {
-    setPredict("meal/train")
-  }
-  const mealChange = (event) => {
-    setPredict("meal")
-  }
-  const categoryChange = (event) => {
-    setPredict("category")
-  }
-  const cuisineChange = (event) => {
-    setPredict("cuisine")
-  }
-  const centerChange = (event) => {
-    setPredict("center")
-  }
   const handleChange = (event, newDataType) => {
     if(newDataType==dataType){
     }
@@ -57,13 +42,13 @@ function App() {
   }
   return (
     <BrowserRouter>
-    <Header homeChange={homeChange} mealChange={mealChange} categoryChange={categoryChange} cuisineChange={cuisineChange} centerChange={centerChange} handleChange={handleChange} dataType={dataType} />
+    <Header handleChange={handleChange} dataType={dataType} />
       <Switch>
         <Route exact path="/" render={(props)=><Home {...props} />} />
-        <Route exact path="/meal" render={(props)=> <Chart {...props} state={state} xLabel={xLabel} yLabel={yLabel} />} />
-        <Route exact path="/category" render={(props)=><Chart {...props} state={state} xLabel={xLabel} yLabel={yLabel} />} />
-        <Route exact path="/cuisine" render={(props)=><Chart {...props} state={state} xLabel={xLabel} yLabel={yLabel} />} />
-        <Route exact path="/center" render={(props)=><Chart {...props} state={state} xLabel={xLabel} yLabel={yLabel} />} />
+        <Route exact path="/meal" render={(props)=>{setPredict("meal"); return <Chart {...props} state={state} xLabel={xLabel} yLabel={yLabel} />}} />
+        <Route exact path="/category" render={(props)=>{setPredict("category"); return <Chart {...props} state={state} xLabel={xLabel} yLabel={yLabel} />}} />
+        <Route exact path="/cuisine" render={(props)=>{setPredict("cuisine"); return <Chart {...props} state={state} xLabel={xLabel} yLabel={yLabel} />}} />
+        <Route exact path="/center" render={(props)=>{setPredict("center"); return <Chart {...props} state={state} xLabel={xLabel} yLabel={yLabel} />}} />
       </Switch>
     </BrowserRouter>
   )
