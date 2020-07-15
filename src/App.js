@@ -35,19 +35,21 @@ function App() {
   }
   const handleChange = (event, newDataType) => {
     if(dataType && newDataType){
-      console.log(dataType,newDataType)
       setDataType(newDataType)
     }
+  }
+  const handleDownload = () => {
+    window.open(`${predictionService.baseUrl}${predict}/predictions/download`)
   }
   return (
     <BrowserRouter>
     <Header handleChange={handleChange} dataType={dataType} />
       <Switch>
         <Route exact path="/" render={(props)=><Home {...props} />} />
-        <Route exact path="/meal" render={(props)=>{setPredict("meal"); return <Chart {...props} state={state} xLabel={xLabel} yLabel={yLabel} />}} />
-        <Route exact path="/category" render={(props)=>{setPredict("category"); return <Chart {...props} state={state} xLabel={xLabel} yLabel={yLabel} />}} />
-        <Route exact path="/cuisine" render={(props)=>{setPredict("cuisine"); return <Chart {...props} state={state} xLabel={xLabel} yLabel={yLabel} />}} />
-        <Route exact path="/center" render={(props)=>{setPredict("center"); return <Chart {...props} state={state} xLabel={xLabel} yLabel={yLabel} />}} />
+        <Route exact path="/meal" render={(props)=>{return <Chart {...props} state={state} xLabel={xLabel} yLabel={yLabel} handleDownload={handleDownload} setPredict={setPredict} label="meal" />}} />
+        <Route exact path="/category" render={(props)=>{return <Chart {...props} state={state} xLabel={xLabel} yLabel={yLabel} handleDownload={handleDownload} setPredict={setPredict} label="category" />}} />
+        <Route exact path="/cuisine" render={(props)=>{return <Chart {...props} state={state} xLabel={xLabel} yLabel={yLabel} handleDownload={handleDownload} setPredict={setPredict} label="cuisine" />}} />
+        <Route exact path="/center" render={(props)=>{return <Chart {...props} state={state} xLabel={xLabel} yLabel={yLabel} handleDownload={handleDownload} setPredict={setPredict} label="center" />}} />
       </Switch>
     </BrowserRouter>
   )

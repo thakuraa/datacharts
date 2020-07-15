@@ -58,8 +58,8 @@ const Header = ({handleChange,dataType}) => (
         <StyledNavLink exact activeClassName="active" to="/center">Center</StyledNavLink>
       </FlexGroup>
     </FlexGroup>
-    <FlexGroup right>
-        <ToggleButtonGroup value={dataType} exclusive onChange={handleChange} background-color='rgba(75,192,192,1)'>
+    <FlexGroup center>
+        <ToggleButtonGroup value={dataType} exclusive onChange={handleChange}>
           <StyledButton value="/train/predictions">Training</StyledButton>
           <StyledButton value="/predictions" >Predicted</StyledButton>
         </ToggleButtonGroup>

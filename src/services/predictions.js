@@ -6,4 +6,8 @@ const getAll = (label) => {
     return axios.get(`${baseUrl}${label}`)
 }
 
-export default {getAll}
+const postAll = (data) => {
+    return axios.post(`${baseUrl}predict/test`,data)
+}
+
+export default {getAll, postAll,baseUrl}
