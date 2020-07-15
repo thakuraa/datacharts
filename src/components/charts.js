@@ -6,7 +6,7 @@ const Chart = ({state,xLabel,yLabel,handleDownload,setPredict,label}) => {
     },[label,setPredict])
     return(
         <div>
-            <Bar data={state} options={{title:{display:true,text:`${yLabel} per ${xLabel}`},legend:{display:true,position:'right'}}} />
+            <Bar data={state} options={{title:{display:true,text:`${yLabel} per ${xLabel}`},responsive: true,maintainAspectRatio: false,legend:{display:true,position:'right'}}} />
             <button onClick={handleDownload}>Download</button>
         </div>
     )
