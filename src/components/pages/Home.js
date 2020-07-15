@@ -25,7 +25,7 @@ const Home = () => {
         predictionService.postAll({"option":id,"option-val":idVal,"category":catType,"checkout-price":cprice}).then(response => {setOrders(response.data)})
     }
     return(
-        <div>
+        <div color="#8B008B">
             <h1 >Welcome to AppyFuzz Optimal Demand Prediction</h1>
             <h2 >This platform is part of a project for IBM Hack Challenge 2020 competition.</h2>
             <h2>Problem Statement: Optimized Warehouse Management of Perishable Goods for a Food Delivery Company</h2>
