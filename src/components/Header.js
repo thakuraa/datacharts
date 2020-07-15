@@ -49,7 +49,7 @@ const StyledNavLink = styled(NavLink)`
 const Header = ({handleChange,dataType}) => (
     <Nav>
     <FlexGroup center>
-      <Logo>ARS</Logo>
+      <Logo>AF</Logo>
       <FlexGroup center>
         <StyledNavLink exact activeClassName="active" to="/">Home</StyledNavLink>
         <StyledNavLink exact activeClassName="active" to="/meal">Meal</StyledNavLink>

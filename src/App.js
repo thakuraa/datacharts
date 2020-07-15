@@ -32,6 +32,7 @@ function App() {
         data: yData
       }
     ]
+    
   }
   const handleChange = (event, newDataType) => {
     if(dataType && newDataType){
